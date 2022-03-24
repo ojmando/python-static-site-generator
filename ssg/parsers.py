@@ -4,8 +4,7 @@ from typing import List
 
 
 class Parser:
-    def __init__(self) -> None:
-        self.extensions: List[str] = list()
+    extensions: List[str] = []
 
     def valid_extension(self, extension):
         return extension in self.extensions
@@ -27,8 +26,7 @@ class Parser:
 
 
 class ResourceParser(Parser):
-    def __init__(self) -> None:
-        self.extensions = [".jpg", ".png", ".gif", ".css", ".html"]
+    extensions = [".jpg", ".png", ".gif", ".css", ".html"]
 
     def parse(self, path: Path, source: Path, dest: Path):
         self.copy(path, source, dest)
